@@ -6,10 +6,10 @@ Pod::Spec.new do |s|
 libPhoneNumber for iOS
 iOS library for parsing, formatting, storing and validating international phone numbers from libphonenumber library.
 DESC
-  s.homepage     = "https://github.com/iziz/libPhoneNumber-iOS.git"
+  s.homepage     = "https://github.com/NewnalDev/libPhoneNumber-iOS"
   s.license      = 'Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)'
-  s.authors      = { "iziz" => "zen.isis@gmail.com", "hyukhur" => "hyukhur@gmail.com" }
-  s.source       = { :git => "https://github.com/iziz/libPhoneNumber-iOS.git", :tag => "0.8.4" }
+  s.authors      = { "NewnalDev" => "joepark@newnal.com" }
+  s.source       = { :git => "https://github.com/NewnalDev/libPhoneNumber-iOS.git", :tag => "0.8.4" }
   s.ios.framework    = 'CoreTelephony'
   s.ios.deployment_target = "4.3"
   s.osx.deployment_target = "10.9"
