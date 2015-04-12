@@ -3265,12 +3265,8 @@ static NSDictionary *DIGIT_MAPPINGS;
     
     numberToParse = [helper normalizeNonBreakingSpace:numberToParse];
     
-    NSString *defaultRegion = nil;
-#if TARGET_OS_IPHONE
-    defaultRegion = [self countryCodeByCarrier];
-#else
-    defaultRegion = [[NSLocale currentLocale] objectForKey: NSLocaleCountryCode];
-#endif
+    NSString *defaultRegion = [self countryCodeByCarrier];
+    
     if ([UNKNOWN_REGION_ isEqualToString:defaultRegion]) {
         // get region from device as a failover (e.g. iPad)
         NSLocale *currentLocale = [NSLocale currentLocale];
@@ -3280,10 +3276,11 @@ static NSDictionary *DIGIT_MAPPINGS;
     return [self parse:numberToParse defaultRegion:defaultRegion error:error];
 }
 
-#if TARGET_OS_IPHONE
-
 - (NSString *)countryCodeByCarrier
 {
+#if TARGET_IPHONE_SIMULATOR
+    [[NSLocale currentLocale] objectForKey: NSLocaleCountryCode];
+#else
     // cache telephony network info;
     // CTTelephonyNetworkInfo objects are unnecessarily created for every call to parseWithPhoneCarrierRegion:error:
     // when in reality this information not change while an app lives in memory
@@ -3303,10 +3300,9 @@ static NSDictionary *DIGIT_MAPPINGS;
     }
     
     return isoCode;
-}
-
 #endif
-
+    
+}
 
 /**
  * Parses a string and returns it in proto buffer format. This method differs
