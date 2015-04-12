@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "libPhoneNumber-iOS"
-  s.version      = "0.8.4"
+  s.version      = "0.8.5"
   s.summary      = "iOS library for parsing, formatting, storing and validating international phone numbers from libphonenumber library."
   s.description  = <<-DESC
 libPhoneNumber for iOS
@@ -9,7 +9,7 @@ DESC
   s.homepage     = "https://github.com/NewnalDev/libPhoneNumber-iOS"
   s.license      = 'Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)'
   s.authors      = { "NewnalDev" => "joepark@newnal.com" }
-  s.source       = { :git => "https://github.com/NewnalDev/libPhoneNumber-iOS.git", :tag => "0.8.4" }
+  s.source       = { :git => "https://github.com/NewnalDev/libPhoneNumber-iOS.git", :tag => "0.8.5" }
   s.ios.framework    = 'CoreTelephony'
   s.ios.deployment_target = "4.3"
   s.osx.deployment_target = "10.9"
