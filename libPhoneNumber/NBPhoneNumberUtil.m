@@ -3278,8 +3278,8 @@ static NSDictionary *DIGIT_MAPPINGS;
 
 - (NSString *)countryCodeByCarrier
 {
-#if TARGET_IPHONE_SIMULATOR
-    [[NSLocale currentLocale] objectForKey: NSLocaleCountryCode];
+#if (TARGET_IPHONE_SIMULATOR || !TARGET_OS_IPHONE)
+    return [[NSLocale currentLocale] objectForKey: NSLocaleCountryCode];
 #else
     // cache telephony network info;
     // CTTelephonyNetworkInfo objects are unnecessarily created for every call to parseWithPhoneCarrierRegion:error:
